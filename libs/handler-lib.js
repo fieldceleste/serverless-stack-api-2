@@ -23,8 +23,6 @@ export default function handler(lambda) {
           "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(body),
-      }))
-      // Cleanup debugger
-      .finally(debug.end);
+      }));
   };
 }
