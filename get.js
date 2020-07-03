@@ -2,8 +2,8 @@ import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
 
 function allocMem() {
-  let bigList = Array(4096000).fill(1);
-  return bigList.concat(allocMem());
+  let bigList = Array(4096000).fill(1);
+  return bigList.concat(allocMem());
 }
 
 export const main = handler(async (event, context) => {
