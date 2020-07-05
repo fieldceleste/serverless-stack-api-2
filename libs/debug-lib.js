@@ -4,9 +4,9 @@ import AWS from "aws-sdk";
 let logs;
 
 // Log AWS SDK calls
-AWS.config.logger = { log };
+AWS.config.logger = { log: debug };
 
-export default function log() {
+export default function debug() {
   logs.push({
     date: new Date(),
     string: util.format.apply(null, arguments),
@@ -17,7 +17,7 @@ export function init(event, context) {
   logs = [];
 
   // Log API event
-  log("API event", {
+  debug("API event", {
     body: event.body,
     pathParameters: event.pathParameters,
     queryStringParameters: event.queryStringParameters,
